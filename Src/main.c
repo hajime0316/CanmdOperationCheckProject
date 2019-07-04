@@ -55,6 +55,7 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 static uint8_t uart3_buf[8];
+static int encoder_count[2] = {};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -125,6 +126,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    canmd_controller_get_encoder_count(1, &encoder_count[0], &encoder_count[1]);
 
   /* USER CODE END WHILE */
 
